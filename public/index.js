@@ -19,9 +19,9 @@ navigator.getUserMedia = navigator.getUserMedia ||
 
 var pc = new peerConnection({
     iceServers: [{
-        url: "stun:stun.services.mozilla.com",
-        username: "somename",
-        credential: "somecredentials"
+        url: "stun:stun.l.google.com:19302",
+        username: "",
+        credential: ""
     }]
 });
 

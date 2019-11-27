@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch './src/**/*.ts' --exec 'ts-node' ./src/server.ts",
-    "build": "ts-node --build tsconfig.json"
+    "start": "ts-node ./src/server.ts"
   },
   "keywords": [],
   "author": "",
