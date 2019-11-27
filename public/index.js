@@ -1,4 +1,4 @@
-var socket = io.connect('http://192.168.1.3:5000');
+var socket = io.connect('https://pet-eat-time.herokuapp.com');
 
 var answersFrom = {},
     offer;
