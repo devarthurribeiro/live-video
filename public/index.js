@@ -26,12 +26,12 @@ var pc = new peerConnection({
 });
 
 pc.onaddstream = function (obj) {
-    var vid = document.createElement('video');
-    vid.setAttribute('controls', true);
-    vid.setAttribute('class', 'video-small');
-    vid.setAttribute('autoplay', 'autoplay');
-    vid.setAttribute('id', 'video-small');
-    document.getElementById('users-container').appendChild(vid);
+    var vid = document.getElementById('clientVideo');
+    //vid.setAttribute('controls', true);
+    //vid.setAttribute('class', 'video-small');
+    //vid.setAttribute('autoplay', 'autoplay');
+    //vid.setAttribute('id', 'video-small');
+    //document.getElementById('users-container').appendChild(vid);
     vid.srcObject = obj.stream;
 }
 
@@ -40,7 +40,7 @@ if (navigator.getUserMedia) {
         video: true,
         audio: true
     }, function (stream) {
-        var video = document.querySelector('video');
+        var video = document.querySelector('#userVideo');
         video.controls = true
         video.srcObject = stream;
         pc.addStream(stream);
@@ -54,9 +54,7 @@ socket.on('add-users', function (data) {
 
         el.setAttribute('id', id);
         el.innerHTML = id;
-        el.addEventListener('click', function () {
-            createOffer(id);
-        });
+        createOffer(id);
         document.getElementById('users').appendChild(el);
     }
 });
