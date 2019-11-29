@@ -1,5 +1,4 @@
-var socket = io.connect('https://pet-eat-time.herokuapp.com');
-
+var socket = io.connect(window.location.protocol + '//' + window.location.host);
 var answersFrom = {},
     offer;
 var peerConnection = window.RTCPeerConnection ||
